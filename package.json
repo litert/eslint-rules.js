@@ -1,6 +1,6 @@
 {
   "name": "@litert/eslint-plugin-rules",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "The custom ESLint rules for LiteRT projects",
   "keywords": [
     "eslint",
@@ -24,15 +24,15 @@
   },
   "homepage": "https://github.com/litert/eslint-rules.js#readme",
   "devDependencies": {
-    "eslint-plugin-eslint-plugin": "^5.0.6",
+    "eslint-plugin-eslint-plugin": "^5.0.8",
     "eslint-plugin-node": "^11.1.0",
-    "mocha": "^10.1.0"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.41.0",
-    "@typescript-eslint/parser": "^5.41.0",
-    "eslint": "^8.26.0",
-    "eslint-plugin-deprecation": "^1.3.2"
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "eslint-plugin-deprecation": "^1.4.0-next.1"
   },
   "engines": {
     "node": "12.x || 14.x || >= 16"
