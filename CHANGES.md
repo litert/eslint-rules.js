@@ -1,5 +1,9 @@
 # Changes
 
+## v0.1.5
+
+- fix(rule): fixed default rules template.
+
 ## v0.1.3
 
 - fix(deps): adapted to TypeScript v5.0.
