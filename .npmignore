@@ -5,3 +5,4 @@
 /docs/
 /tests/
 /.eslintrc.js
+/upgrade_deps.sh

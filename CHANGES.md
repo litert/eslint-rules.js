@@ -1,8 +1,14 @@
 # Changes
 
+## v0.1.6
+
+- feat(config): added `no-console` as warning to the default rules template.
+- feat(config): added `no-irregular-whitespace` as error to the default rules template.
+- fix(config): ignore naming case of imported namespaces.
+
 ## v0.1.5
 
-- fix(rule): fixed default rules template.
+- fix(config): fixed default rules template.
 
 ## v0.1.3
 
