@@ -1,5 +1,9 @@
 # Changes
 
+## v0.1.7
+
+- build(deps): upgraded deps to adapt to TypeScript v5.4.
+
 ## v0.1.6
 
 - feat(config): added `no-console` as warning to the default rules template.
