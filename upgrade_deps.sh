@@ -7,10 +7,11 @@ npm i -D \
     eslint-plugin-node@latest \
     mocha@latest
 
-npm i @typescript-eslint/eslint-plugin@latest \
-    @typescript-eslint/parser@latest \
+npm i @eslint/js@latest \
+    @stylistic/eslint-plugin@latest \
+    @types/eslint__js@latest \
     eslint@latest \
-    eslint-plugin-deprecation@latest
+    typescript-eslint@latest
 
 rm -rf node_modules package-lock.json
 

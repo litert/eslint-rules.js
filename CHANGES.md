@@ -1,5 +1,9 @@
 # Changes
 
+## v0.2.0
+
+- build(deps): upgraded deps to adapt to TypeScript v5.6 and Eslint v9.
+
 ## v0.1.7
 
 - build(deps): upgraded deps to adapt to TypeScript v5.4.
