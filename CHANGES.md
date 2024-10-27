@@ -1,5 +1,9 @@
 # Changes
 
+## v0.2.1
+
+- fix(config): removed default files and tsconfig.json path from the default rules template.
+
 ## v0.2.0
 
 - build(deps): upgraded deps to adapt to TypeScript v5.6 and Eslint v9.

@@ -1,6 +1,6 @@
 {
   "name": "@litert/eslint-plugin-rules",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The custom ESLint rules for LiteRT projects",
   "keywords": [
     "eslint",
@@ -11,7 +11,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha tests --recursive"
+    "test": "node --test tests/lib/rules/*.js "
   },
   "author": "Angus.Fenying <fenying@litert.org> (https://fenying.net)",
   "license": "Apache-2.0",
