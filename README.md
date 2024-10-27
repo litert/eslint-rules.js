@@ -10,23 +10,32 @@ npm i --save-dev @litert/eslint-plugin-rules
 
 ## Usage
 
-Put these configuration in your `.eslintrc`:
+Put these configuration in your `eslint.config.js`:
 
 ```js
-{
-    "extends": [
-        "plugin:@litert/rules/typescript"
-    ],
-    "parserOptions": {
-        "project": "./tsconfig.json" // Configure the path to your tsconfig.json file
-    },
-    "plugins": [
-        "@litert/rules"
-    ],
-    "rules": {
-        // Add your cutomized rules here if necessary.
+// eslint.config.js
+const LitertEslintRules = require('@litert/eslint-plugin-rules');
+
+module.exports = [
+    ...LitertEslintRules.configs.typescript,
+    {
+        plugins: {
+            '@litert/rules': require('@litert/eslint-plugin-rules'),
+        },
+        files: [
+            'src/**/*.ts',
+        ],
+        languageOptions: {
+            parserOptions: {
+                project: 'tsconfig.json',
+                tsconfigRootDir: __dirname,
+            },
+        },
+        rules: {
+            // add other customized rules here.
+        },
     }
-}
+];
 ```
 
 ## Customized rules
