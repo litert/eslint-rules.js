@@ -1,5 +1,9 @@
 # Changes
 
+## v0.2.3
+
+- fix(config): fixed compatibility with @typescript-eslint/parser v8.14.0.
+
 ## v0.2.1
 
 - fix(config): removed default files and tsconfig.json path from the default rules template.
