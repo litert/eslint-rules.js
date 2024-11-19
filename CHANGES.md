@@ -1,5 +1,9 @@
 # Changes
 
+## v0.2.4
+
+- fix(config): allow `@typescript-eslint/switch-exhaustiveness-check` work with `default`.
+
 ## v0.2.3
 
 - fix(config): fixed compatibility with @typescript-eslint/parser v8.14.0.
