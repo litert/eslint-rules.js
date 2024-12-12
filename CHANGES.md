@@ -1,5 +1,9 @@
 # Changes
 
+## v0.2.5
+
+- fix(config): enable rule `@typescript-eslint/no-explicit-any` (as warning).
+
 ## v0.2.4
 
 - fix(config): allow `@typescript-eslint/switch-exhaustiveness-check` work with `default`.
