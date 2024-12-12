@@ -11,7 +11,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "node --test tests/lib/rules/*.js "
+    "test": "node --test tests/lib/rules/*.js && ./tests/ts/run.sh"
   },
   "author": "Angus.Fenying <fenying@litert.org> (https://fenying.net)",
   "license": "Apache-2.0",
