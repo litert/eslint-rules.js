@@ -3,6 +3,7 @@
 ## v0.2.5
 
 - fix(config): enable rule `@typescript-eslint/no-explicit-any` (as warning).
+- fix(config): enable rule `max-lines` (as warning).
 
 ## v0.2.4
 
