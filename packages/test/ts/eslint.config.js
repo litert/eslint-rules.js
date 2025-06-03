@@ -1,12 +1,9 @@
 // eslint.config.js
-const LitertEslintRules = require('../..');
+const rules = require('@litert/eslint-plugin-recommended-rules');
 
 module.exports = [
-    ...LitertEslintRules.configs.typescript,
+    ...rules.typescript,
     {
-        plugins: {
-            '@litert/rules': LitertEslintRules,
-        },
         files: [
             'cases/**/*.ts', // don't add `./` before the path
         ],

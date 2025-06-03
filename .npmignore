@@ -1,8 +1,0 @@
-/node_modules/
-/.git/
-/.gitignore
-/.npmignore
-/docs/
-/tests/
-/.eslintrc.js
-/upgrade_deps.sh

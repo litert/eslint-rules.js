@@ -8,7 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/disable-for-each-method"),
+const rule = require("@litert/eslint-plugin/rules/disable-for-each-method"),
   RuleTester = require("eslint").RuleTester;
 
 

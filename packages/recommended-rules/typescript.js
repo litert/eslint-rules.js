@@ -1,6 +1,7 @@
 // eslint.config.js
 const TsEslint = require('@typescript-eslint/eslint-plugin');
 const Stylistic = require('@stylistic/eslint-plugin');
+const LiteRt = require('@litert/eslint-plugin');
 
 module.exports = [
     {
@@ -18,6 +19,7 @@ module.exports = [
         plugins: {
             '@typescript-eslint': TsEslint,
             '@stylistic': Stylistic,
+            '@litert': LiteRt,
         },
         languageOptions: {
             parser: require('@typescript-eslint/parser'),
@@ -25,7 +27,7 @@ module.exports = [
         rules: {
 
             /* eslint core rules start */
-            '@litert/rules/disable-for-each-method': ['error'],
+            '@litert/disable-for-each-method': ['error'],
             'brace-style': 'off',
             'no-console': ['warn'],
             'no-irregular-whitespace': ['error'],

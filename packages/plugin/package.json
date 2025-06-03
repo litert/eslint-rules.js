@@ -1,0 +1,16 @@
+{
+  "name": "@litert/eslint-plugin",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "The custom rules for ESLint",
+  "scripts": {
+    "ottoia:clean": "",
+    "prepublishOnly": "echo \"Please use ottoia publishing this package!\"; exit 1;"
+  },
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "ottoia:alias": "plugin",
+  "access": "public"
+}

@@ -1,6 +1,6 @@
 {
   "name": "@litert/eslint-plugin-rules",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "The custom ESLint rules for LiteRT projects",
   "keywords": [
     "eslint",
@@ -11,7 +11,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "node --test tests/lib/rules/*.js && ./tests/ts/run.sh"
+    "test": "ottoia run test -p @@test"
   },
   "author": "Angus.Fenying <fenying@litert.org> (https://fenying.net)",
   "license": "Apache-2.0",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/litert/eslint-rules.js#readme",
   "devDependencies": {
+    "@litert/ottoia": "^0.4.4",
     "eslint-plugin-eslint-plugin": "^6.3.1",
     "eslint-plugin-node": "^11.1.0"
   },
@@ -35,6 +36,14 @@
     "typescript-eslint": "^8.14.0"
   },
   "engines": {
-    "node": "12.x || 14.x || >= 16"
-  }
+    "node": ">= 18"
+  },
+  "ottoia": {
+    "releases": {
+      "production": {
+        "tag": "latest"
+      }
+    }
+  },
+  "private": true
 }
