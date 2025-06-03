@@ -11,7 +11,12 @@
   },
   "private": false,
   "dependencies": {
-    "@litert/eslint-plugin-recommended-rules": "-"
+    "@litert/eslint-plugin-recommended-rules": "-",
+    "@eslint/js": "-",
+    "@stylistic/eslint-plugin": "-",
+    "@types/eslint__js": "-",
+    "eslint": "-",
+    "typescript-eslint": "-"
   },
   "devDependencies": {},
   "peerDependencies": {},
