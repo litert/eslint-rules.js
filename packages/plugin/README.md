@@ -17,14 +17,16 @@ This plugin provides custom ESLint rules for the LiteRT organization.
     ```js
     {
         "@litert/disallow-single-line-block": ["error", {
-            "arrow-callback": true,
-            "if": true,
-            "for": true,
-            "while": true,
-            "case": true,
-            "do-while": true,
-            "function-callback": true,
-            "function": true
+            "exception": {
+                "arrow-callback": true,
+                "if": true,
+                "for": true,
+                "while": true,
+                "case": true,
+                "do-while": true,
+                "function-callback": true,
+                "function": true
+            }
         }]
     }
     ```

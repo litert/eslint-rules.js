@@ -29,7 +29,9 @@ module.exports = [
             /* eslint core rules start */
             '@litert/disable-for-each-method': ['error'],
             '@litert/disallow-single-line-block': ['error', {
-                'arrow-callback': true,
+                'exception': {
+                    'arrow-callback': true,
+                },
             }],
             'brace-style': 'off',
             'no-console': ['warn'],
@@ -347,7 +349,7 @@ module.exports = [
             '@stylistic/comma-spacing': ['error'],
             '@stylistic/semi': ['error'],
             '@stylistic/new-parens': ['error'],
-            '@stylistic/func-call-spacing': ['error', 'never'],
+            '@stylistic/function-call-spacing': ['error', 'never'],
             '@stylistic/keyword-spacing': ['error', {
                 'before': true,
                 'after': true

@@ -29,14 +29,16 @@ Just put these configuration file [`eslint.config.js`](./example-eslint.config.j
     ```js
     {
         "@litert/disallow-single-line-block": ["error", {
-            "arrow-callback": true,
-            "if": true,
-            "for": true,
-            "while": true,
-            "case": true,
-            "do-while": true,
-            "function-callback": true,
-            "function": true
+            "exception": {
+                "arrow-callback": true,
+                "if": true,
+                "for": true,
+                "while": true,
+                "case": true,
+                "do-while": true,
+                "function-callback": true,
+                "function": true
+            }
         }]
     }
     ```

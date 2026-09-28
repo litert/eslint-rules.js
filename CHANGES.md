@@ -1,6 +1,6 @@
 # Changes
 
-## v0.4.0
+## v0.4.1
 
 - feat(plugin): added `@litert/disallow-single-line-block` rule.
 
