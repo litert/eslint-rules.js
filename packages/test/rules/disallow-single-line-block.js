@@ -204,19 +204,24 @@ const defaultConfigCases = [
 for (const configForm of defaultConfigForms) {
     for (const testCase of defaultConfigCases) {
         test(`default config ${configForm.name} rejects ${testCase.name}`, () => {
-            const linter = new Linter({ configType: 'eslintrc' });
+            const linter = new Linter();
 
-            linter.defineRule('disallow-single-line-block', rule);
-
-            const messages = linter.verify(testCase.code, {
-                parserOptions: {
+            const messages = linter.verify(testCase.code, [{
+                plugins: {
+                    '@litert': {
+                        rules: {
+                            'disallow-single-line-block': rule,
+                        },
+                    },
+                },
+                languageOptions: {
                     ecmaVersion: 2022,
                     sourceType: 'module',
                 },
                 rules: {
-                    'disallow-single-line-block': configForm.value,
+                    '@litert/disallow-single-line-block': configForm.value,
                 },
-            });
+            }]);
 
             assert.equal(messages.length, 1);
             assert.equal(messages[0].message, testCase.message);

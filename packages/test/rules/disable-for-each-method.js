@@ -42,11 +42,11 @@ ruleTester.run("disable-for-each-method", rule, {
   invalid: [
     {
       code: "[123].forEach(() => {})",
-      errors: [{ message: 'Use "for of" syntax instead.', type: "CallExpression" }],
+      errors: [{ message: 'Use "for of" syntax instead.' }],
     },
     {
       code: "[{ a: 123, b: 345 }, { a: 123, b: 111 }].forEach(() => {})",
-      errors: [{ message: 'Use "for of" syntax instead.', type: "CallExpression" }],
+      errors: [{ message: 'Use "for of" syntax instead.' }],
     },
   ],
 });
