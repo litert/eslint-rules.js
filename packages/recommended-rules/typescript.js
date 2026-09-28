@@ -28,6 +28,9 @@ module.exports = [
 
             /* eslint core rules start */
             '@litert/disable-for-each-method': ['error'],
+            '@litert/disallow-single-line-block': ['error', {
+                'arrow-callback': true,
+            }],
             'brace-style': 'off',
             'no-console': ['warn'],
             'no-irregular-whitespace': ['error'],
@@ -37,6 +40,7 @@ module.exports = [
                 'ignoreTemplateLiterals': true,
                 'ignoreComments': true
             }],
+            'curly': ['error', 'all'],
             'no-extra-semi': 'off',
             'no-loss-of-precision': 'off',
             'keyword-spacing': 'off',

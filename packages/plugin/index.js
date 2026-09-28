@@ -7,4 +7,5 @@
 // import all rules in lib/rules
 module.exports.rules = {
     "disable-for-each-method": require('./rules/disable-for-each-method'),
+    "disallow-single-line-block": require('./rules/disallow-single-line-block'),
 };

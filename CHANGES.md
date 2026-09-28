@@ -1,5 +1,9 @@
 # Changes
 
+## v0.4.0
+
+- feat(plugin): added `@litert/disallow-single-line-block` rule.
+
 ## v0.2.5
 
 - fix(config): enable rule `@typescript-eslint/no-explicit-any` (as warning).

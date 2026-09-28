@@ -6,7 +6,6 @@
   "scripts": {
     "ottoia:prepublish": "",
     "ottoia:postpublish": "",
-    "test": "node --test rules/*.js && ./ts/run.sh",
     "prepublishOnly": "echo \"Please use ottoia publishing this package!\"; exit 1;"
   },
   "private": true,

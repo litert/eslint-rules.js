@@ -1,22 +1,10 @@
-# @litert/eslint-plugin-rules
+# LiteRT ESLint Plugin
 
-The customized ESLint rules insides LiteRT ORG.
+This plugin provides custom ESLint rules for the LiteRT organization.
 
-## Installation
+## Available Rules
 
-```sh
-npm i --save-dev @litert/eslint-plugin-rules
-```
-
-## Usage
-
-Just put these configuration file [`eslint.config.js`](./example-eslint.config.js) in the root of your project.
-
-## Customized rules
-
-- `@litert/disable-for-each-method`
-
-    Disabling the method `Array.prototype.forEach`.
+- `disable-for-each-method`: Disallows the use of the `forEach` method.
 
     ```js
     {
@@ -43,5 +31,3 @@ Just put these configuration file [`eslint.config.js`](./example-eslint.config.j
 
     By default, all block types are disallowed from being single-line unless
     explicitly allowed through the configuration.
-
-Click [here](./lib/configs/typescript.js) to read the default rules.
