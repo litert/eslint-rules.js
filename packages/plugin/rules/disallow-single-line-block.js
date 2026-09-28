@@ -8,16 +8,11 @@
 // Rule Definition
 //------------------------------------------------------------------------------
 
-const EXCEPTION_NAMES = [
-  'if',
-  'for',
-  'while',
-  'case',
-  'do-while',
-  'arrow-callback',
-  'function-callback',
-  'function',
-];
+const DEFAULT_EXCEPTIONS = {
+  getter: true,
+  setter: true,
+  object: true,
+};
 
 /**
  * @type {import('eslint').Rule.RuleModule}
@@ -49,9 +44,15 @@ module.exports = {
                   'while': { type: 'boolean' },
                   'case': { type: 'boolean' },
                   'do-while': { type: 'boolean' },
+                  'catch': { type: 'boolean' },
+                  'finally': { type: 'boolean' },
                   'arrow-callback': { type: 'boolean' },
+                  'arrow-function': { type: 'boolean' },
                   'function-callback': { type: 'boolean' },
                   'function': { type: 'boolean' },
+                  'getter': { type: 'boolean' },
+                  'setter': { type: 'boolean' },
+                  'object': { type: 'boolean' },
                 },
                 additionalProperties: false,
               },
@@ -70,11 +71,9 @@ module.exports = {
   create(context) {
     const sourceCode = context.sourceCode;
     const rawOptions = context.options[0];
-    const exceptions = (
-      rawOptions === undefined || rawOptions === 'all'
-    )
+    const exceptions = rawOptions === 'all'
       ? {}
-      : (rawOptions.exception ?? {});
+      : { ...DEFAULT_EXCEPTIONS, ...(rawOptions?.exception ?? {}) };
 
     function getOpeningCurly(node) {
       return sourceCode.getTokens(node).find((token) => token.value === '{') ?? null;
@@ -82,30 +81,16 @@ module.exports = {
 
     function isSingleLineCurlyBlock(node) {
       const openingCurly = getOpeningCurly(node);
-      const closingCurly = sourceCode.getLastToken(node);
 
-      if (
-        !openingCurly ||
-        !closingCurly ||
-        openingCurly.value !== '{' ||
-        closingCurly.value !== '}'
-      ) {
-        return false;
-      }
+      return openingCurly !== null &&
+        openingCurly.loc.start.line === sourceCode.getLastToken(node).loc.end.line;
+    }
 
-      const tokenAfterOpeningCurly = sourceCode.getTokenAfter(openingCurly);
-      const tokenBeforeClosingCurly = sourceCode.getTokenBefore(closingCurly);
+    function isEmptyCurlyBlock(node) {
+      const openingCurly = getOpeningCurly(node);
 
-      if (
-        !tokenAfterOpeningCurly ||
-        !tokenBeforeClosingCurly ||
-        tokenAfterOpeningCurly === closingCurly ||
-        tokenBeforeClosingCurly === openingCurly
-      ) {
-        return false;
-      }
-
-      return openingCurly.loc.start.line === closingCurly.loc.end.line;
+      return openingCurly !== null &&
+        sourceCode.getTokenAfter(openingCurly) === sourceCode.getLastToken(node);
     }
 
     function isCallbackFunction(functionNode) {
@@ -121,7 +106,24 @@ module.exports = {
       return functionOwner.arguments.includes(functionNode);
     }
 
+    function getAccessorKind(functionNode) {
+      switch (functionNode.parent?.kind) {
+        case 'get':
+          return 'getter';
+
+        case 'set':
+          return 'setter';
+
+        default:
+          return null;
+      }
+    }
+
     function getAllowedKind(node) {
+      if (node.type === 'ObjectExpression') {
+        return exceptions.object ? 'object' : null;
+      }
+
       const parent = node.parent;
 
       switch (parent?.type) {
@@ -139,6 +141,14 @@ module.exports = {
         case 'DoWhileStatement':
           return exceptions['do-while'] ? 'do-while' : null;
 
+        case 'CatchClause':
+          return exceptions.catch ? 'catch' : null;
+
+        case 'TryStatement':
+          return parent.finalizer === node && exceptions.finally
+            ? 'finally'
+            : null;
+
         case 'SwitchCase':
           return exceptions.case ? 'case' : null;
 
@@ -146,19 +156,31 @@ module.exports = {
           return exceptions.function ? 'function' : null;
 
         case 'FunctionExpression':
+          const accessorKind = getAccessorKind(parent);
+
+          if (accessorKind !== null) {
+            return exceptions[accessorKind] ? accessorKind : null;
+          }
+
           if (isCallbackFunction(parent)) {
             return exceptions['function-callback']
               ? 'function-callback'
-              : null;
+              : (exceptions.function ? 'function' : null);
           }
 
           return exceptions.function ? 'function' : null;
 
         case 'ArrowFunctionExpression':
           if (isCallbackFunction(parent)) {
-            return exceptions['arrow-callback']
-              ? 'arrow-callback'
-              : null;
+            if (exceptions['arrow-callback']) {
+              return 'arrow-callback';
+            }
+
+            return exceptions.function ? 'function' : null;
+          }
+
+          if (exceptions['arrow-function']) {
+            return 'arrow-function';
           }
 
           return exceptions.function ? 'function' : null;
@@ -179,7 +201,10 @@ module.exports = {
     }
 
     function validateSingleLineBlock(node, defaultKind) {
-      if (!isSingleLineCurlyBlock(node)) {
+      if (
+        !isSingleLineCurlyBlock(node) ||
+        isEmptyCurlyBlock(node)
+      ) {
         return;
       }
 
@@ -196,14 +221,14 @@ module.exports = {
       BlockStatement(node) {
         validateSingleLineBlock(node, 'statement');
       },
-      ClassBody(node) {
-        validateSingleLineBlock(node, 'class');
-      },
       StaticBlock(node) {
         validateSingleLineBlock(node, 'static');
       },
       SwitchStatement(node) {
         validateSingleLineBlock(node, 'switch');
+      },
+      ObjectExpression(node) {
+        validateSingleLineBlock(node, 'object');
       },
     };
   },

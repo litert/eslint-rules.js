@@ -8,7 +8,9 @@ TS_LINT_LOG="$TS_TEST_DIR/lint.log"
 
 cd "$REPO_ROOT"
 
-node --test packages/test/rules/*.js
+for test_file in packages/test/rules/*.js; do
+    node "$test_file"
+done
 
 cd "$TS_TEST_DIR"
 npx eslint -c eslint.config.js "cases/**/*.ts" > "$TS_LINT_LOG"
@@ -35,4 +37,3 @@ if [ "$TEST_NO_EXPLICIT_ANY" -ne 2 ]; then
 fi
 
 echo "packages/test passed"
-

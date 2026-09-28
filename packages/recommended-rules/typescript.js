@@ -31,6 +31,7 @@ module.exports = [
             '@litert/disallow-single-line-block': ['error', {
                 'exception': {
                     'arrow-callback': true,
+                    'arrow-function': true,
                 },
             }],
             'brace-style': 'off',

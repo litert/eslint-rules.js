@@ -14,7 +14,6 @@
     "@litert/eslint-plugin-recommended-rules": "-",
     "@eslint/js": "-",
     "@stylistic/eslint-plugin": "-",
-    "@types/eslint__js": "-",
     "eslint": "-",
     "typescript-eslint": "-"
   },

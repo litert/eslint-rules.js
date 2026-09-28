@@ -1,0 +1,47 @@
+{
+    "skills": {
+        "ai-agent-work-guidelines": {
+            "name": "ai-agent-work-guidelines",
+            "ref": "git+ssh://github.com/fenying/my-ai-cookbook.git@2cb499d29d6492d586fbf59094fb2203446e4844",
+            "ref_path": "skills/ai-agent-work-guidelines",
+            "source": "git+ssh://github.com/fenying/my-ai-cookbook.git"
+        },
+        "code-design-rules": {
+            "name": "code-design-rules",
+            "ref": "git+ssh://github.com/fenying/my-ai-cookbook.git@2cb499d29d6492d586fbf59094fb2203446e4844",
+            "ref_path": "skills/code-design-rules",
+            "source": "git+ssh://github.com/fenying/my-ai-cookbook.git"
+        },
+        "git-guidelines": {
+            "name": "git-guidelines",
+            "ref": "git+ssh://github.com/fenying/my-ai-cookbook.git@2cb499d29d6492d586fbf59094fb2203446e4844",
+            "ref_path": "skills/git-guidelines",
+            "source": "git+ssh://github.com/fenying/my-ai-cookbook.git"
+        },
+        "markdown-document-rules": {
+            "name": "markdown-document-rules",
+            "ref": "git+ssh://github.com/fenying/my-ai-cookbook.git@2cb499d29d6492d586fbf59094fb2203446e4844",
+            "ref_path": "skills/markdown-document-rules",
+            "source": "git+ssh://github.com/fenying/my-ai-cookbook.git"
+        },
+        "module-spec-management": {
+            "name": "module-spec-management",
+            "ref": "git+ssh://github.com/fenying/my-ai-cookbook.git@2cb499d29d6492d586fbf59094fb2203446e4844",
+            "ref_path": "skills/module-spec-management",
+            "source": "git+ssh://github.com/fenying/my-ai-cookbook.git"
+        },
+        "nodejs-test-rules": {
+            "name": "nodejs-test-rules",
+            "ref": "git+ssh://github.com/fenying/my-ai-cookbook.git@2cb499d29d6492d586fbf59094fb2203446e4844",
+            "ref_path": "skills/nodejs-test-rules",
+            "source": "git+ssh://github.com/fenying/my-ai-cookbook.git"
+        },
+        "typescript-general-rules": {
+            "name": "typescript-general-rules",
+            "ref": "git+ssh://github.com/fenying/my-ai-cookbook.git@2cb499d29d6492d586fbf59094fb2203446e4844",
+            "ref_path": "skills/typescript-general-rules",
+            "source": "git+ssh://github.com/fenying/my-ai-cookbook.git"
+        }
+    },
+    "version": 1
+}
