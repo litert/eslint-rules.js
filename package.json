@@ -1,6 +1,6 @@
 {
   "name": "@litert/eslint-plugin-rules",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "The custom ESLint rules for LiteRT projects",
   "keywords": [
     "eslint",

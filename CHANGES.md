@@ -3,6 +3,7 @@
 ## v0.4.3
 
 - fix(plugin): `@litert/disable-for-each-method` should reject quoted for-each method calls.
+- test: rebuilt all test cases.
 
 ## v0.4.2
 
