@@ -1,5 +1,9 @@
 # Changes
 
+## v0.4.3
+
+- fix(plugin): `@litert/disable-for-each-method` should reject quoted for-each method calls.
+
 ## v0.4.2
 
 - fix(plugin): improved `@litert/disallow-single-line-block` rule

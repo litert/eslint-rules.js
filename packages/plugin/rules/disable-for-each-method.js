@@ -28,7 +28,11 @@ module.exports = {
     return {
       CallExpression: function reportUnwantedName(node) {
 
-        if (node.callee?.property?.name === "forEach") {
+        const property = node.callee?.property;
+        const isForEachMethod = property?.name === "forEach" ||
+          (node.callee?.computed && property?.value === "forEach");
+
+        if (isForEachMethod) {
           context.report({
             node: node,
             message: [
