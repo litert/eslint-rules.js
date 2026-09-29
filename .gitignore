@@ -1,4 +1,8 @@
 .ottoia
 /node_modules/
 /tests/ts/lint.log
-/.agents/
+AGENTS.md
+.ai/
+.codex/
+.aiignore
+.agents/
